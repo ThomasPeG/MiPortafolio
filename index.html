@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Web Developer</title>
+    <!-- Main styles -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- Component styles -->
+    <link rel="stylesheet" href="./styles/components/navbar.css">
+    <link rel="stylesheet" href="./styles/components/hero.css">
+    <link rel="stylesheet" href="./styles/components/about.css">
+    <link rel="stylesheet" href="./styles/components/skills.css">
+    <link rel="stylesheet" href="./styles/components/services.css">
+    <link rel="stylesheet" href="./styles/components/contact.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div id="navbar-container"></div>
+        <main>
+            <div id="hero-container"></div>
+            <div id="about-container"></div>
+            <div id="skills-container"></div>
+            <div id="services-container"></div>
+            <div id="contact-container"></div>
+        </main>
+    </div>
+
+    <script>
+        async function loadComponent(url, containerId) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    console.warn(`Failed to load component: ${url}`);
+                    return;
+                }
+                const html = await response.text();
+                const container = document.getElementById(containerId);
+                if (container) {
+                    container.innerHTML = html;
+                } else {
+                    console.warn(`Container not found: ${containerId}`);
+                }
+            } catch (error) {
+                console.warn(`Error loading component ${url}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                { url: './components/navbar.html', id: 'navbar-container' },
+                { url: './components/hero.html', id: 'hero-container' },
+                { url: './components/about.html', id: 'about-container' },
+                { url: './components/skills.html', id: 'skills-container' },
+                { url: './components/services.html', id: 'services-container' },
+                { url: './components/contact.html', id: 'contact-container' }
+            ];
+
+            for (const component of components) {
+                await loadComponent(component.url, component.id);
+            }
+        });
+    </script>
+    <script src="./src/main.js"></script>
+</body>
+</html>

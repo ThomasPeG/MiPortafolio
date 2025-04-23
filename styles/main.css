@@ -1,0 +1,94 @@
+:root {
+    --primary-color: #B4A7D6;    /* Soft pastel purple */
+    --secondary-color: #A8E6CF;   /* Soft pastel mint */
+    --bg-color: #1A1B26;         /* Slightly lighter dark background */
+    --text-color: #E8E9F3;       /* Soft white */
+    --card-bg: rgba(180, 167, 214, 0.08);  /* Transparent pastel purple */
+    --accent-color: #FFB7B2;     /* Soft pastel pink for accents */
+    --hover-color: #FFDAC1;      /* Soft pastel peach for hover states */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Common styles */
+section {
+    padding: 3rem 2rem; /* Reduced padding */
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Adjust container spacing */
+[id$="-container"] {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+}
+
+/* Special case for navbar container */
+#navbar-container {
+    min-height: unset;
+}
+
+/* Import component styles */
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/skills.css';
+@import 'components/services.css';
+@import 'components/contact.css';
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .skills-container,
+    .service-grid,
+    .tech-skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+/* Add these styles at the beginning of your main.css */
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+main {
+    width: 100%;
+    position: relative;
+}

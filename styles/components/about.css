@@ -1,0 +1,17 @@
+.about {
+    padding: 3rem 2rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* Reduced from 2rem */
+    width: 100%;
+    padding: 1rem; /* Reduced from 2rem */
+}
+
+.skill-card {
+    text-align: center;
+    margin: 0.5rem; /* Reduced from 1rem */
+    padding: 1.5rem; /* Reduced from 2rem */
+}
