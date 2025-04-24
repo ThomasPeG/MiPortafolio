@@ -1,0 +1,118 @@
+.why-web {
+    padding: 6rem 2rem;
+    background: var(--bg-color);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+    max-width: 1000px; /* Reduced from 1200px */
+    margin: 0 auto;
+}
+
+.benefit-card.featured {
+    grid-column: span 1;
+    border: 1px solid rgba(180, 167, 214, 0.2);
+    background: linear-gradient(145deg, var(--card-bg), rgba(180, 167, 214, 0.1));
+    transform: scale(1.02); /* Reduced from 1.05 */
+    padding: 2rem; /* Reduced from 2.5rem */
+}
+
+.benefit-card.featured i {
+    font-size: 2.2rem; /* Reduced from 2.4rem */
+}
+
+.benefit-card.featured h4 {
+    font-size: 1.4rem; /* Reduced from 1.5rem */
+    margin: 0.8rem 0; /* Reduced from 1rem */
+}
+
+.benefit-card.featured p {
+    font-size: 1rem; /* Reduced from 1.1rem */
+}
+
+.secondary-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.secondary-benefits .benefit-card {
+    transform: scale(0.95);
+    padding: 1.5rem;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.benefit-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.benefit-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.benefit-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .secondary-benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .why-web {
+        padding: 4rem 1rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns */
+        gap: 1rem;
+    }
+    
+    .secondary-benefits {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns */
+        gap: 1rem;
+    }
+
+    .benefit-card {
+        padding: 1.25rem;
+    }
+
+    .benefit-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .benefit-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .benefit-card.featured {
+        padding: 1.5rem;
+    }
+}
+
+.final-text-container {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
+    text-align: center;
+}

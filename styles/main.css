@@ -23,7 +23,7 @@ body {
 
 /* Common styles */
 section {
-    padding: 3rem 2rem; /* Reduced padding */
+    padding: 3rem 2rem;
     min-height: auto;
     display: flex;
     flex-direction: column;
@@ -33,62 +33,137 @@ section {
     margin: 0 auto;
 }
 
-/* Adjust container spacing */
-[id$="-container"] {
-    width: 100%;
-    min-height: auto;
-    position: relative;
+/* Remove all background colors and borders from sections */
+section:nth-child(even),
+section:nth-child(odd) {
+    background: transparent;
 }
 
-/* Special case for navbar container */
-#navbar-container {
-    min-height: unset;
+section:not(:last-child) {
+    border-bottom: none;
 }
 
-/* Import component styles */
-@import 'components/navbar.css';
-@import 'components/hero.css';
-@import 'components/skills.css';
-@import 'components/services.css';
-@import 'components/contact.css';
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .skills-container,
-    .service-grid,
-    .tech-skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    .navbar {
-        padding: 1rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-}
-
-/* Add these styles at the beginning of your main.css */
+/* Container styles */
 .main-container {
     width: 100%;
     min-height: 100vh;
     position: relative;
+    background: var(--bg-color);
 }
 
 main {
     width: 100%;
     position: relative;
+    background: var(--bg-color);
+}
+
+[id$="-container"] {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+    background: var(--bg-color);
+}
+
+/* Import component styles */
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/services.css';
+@import 'components/contact.css';
+@import 'components/animations.css';
+
+/* Animation classes */
+.pre-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay variations */
+[data-delay="1"] { transition-delay: 0.1s; }
+[data-delay="2"] { transition-delay: 0.2s; }
+[data-delay="3"] { transition-delay: 0.3s; }
+[data-delay="4"] { transition-delay: 0.4s; }
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.scroll-animation {
+    view-timeline-name: --section;
+    view-timeline-axis: block;
+    animation-timeline: --section;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+}
+
+.slide-up {
+    animation-name: slide-up;
+}
+
+.slide-right {
+    animation-name: slide-right;
+}
+
+.slide-left {
+    animation-name: slide-left;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.service-card:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.service-card:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.service-card:nth-child(4) {
+    transition-delay: 600ms;
 }

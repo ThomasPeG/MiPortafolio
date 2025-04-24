@@ -8,13 +8,13 @@
 }
 
 .navbar {
-    background: rgba(10, 11, 30, 0.95);
+    background: rgba(26, 27, 38, 0.98); /* Darker background */
     backdrop-filter: blur(10px);
-    padding: 1.25rem 4rem; /* Increased padding */
+    border-bottom: 2px solid var(--primary-color);
+    padding: 1.25rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(180, 167, 214, 0.2);
 }
 
 .logo {

@@ -169,3 +169,13 @@
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
 }
+
+
+/* Remove these button-related styles */
+.hero-buttons {
+    display: none;
+}
+
+.hero-btn {
+    display: none;
+}
