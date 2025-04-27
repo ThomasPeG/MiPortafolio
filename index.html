@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Web Developer</title>
+    <title>Newwwebsite | Web Developer</title>
+    <meta name="google-site-verification" content="D27ZmmFLWdfg-2zJb3p0-MZ79Ty9dtWctN7kS8aEAp0" />
     <!-- Main styles -->
     <link rel="stylesheet" href="./styles/main.css">
     <!-- Component styles -->
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="./styles/components/services.css">
     <link rel="stylesheet" href="./styles/components/contact.css">
     <link rel="stylesheet" href="./styles/components/why-web.css">
+    <link rel="stylesheet" href="./styles/components/footer.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -23,6 +25,16 @@
             <div id="why-web-container"></div>
             <div id="services-container"></div>
         </main>
+        <div id="footer-container"></div>
+        <!-- Add these buttons -->
+        <div class="scroll-buttons">
+            <button id="scroll-up-btn" class="scroll-btn">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <button id="scroll-down-btn" class="scroll-btn">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
     </div>
 
     <script>
@@ -50,7 +62,8 @@
                 { url: './components/navbar.html', id: 'navbar-container' },
                 { url: './components/hero.html', id: 'hero-container' },
                 { url: './components/why-web.html', id: 'why-web-container' },
-                { url: './components/services.html', id: 'services-container' }
+                { url: './components/services.html', id: 'services-container' },
+                { url: './components/footer.html', id: 'footer-container' }
             ];
 
             for (const component of components) {
@@ -61,5 +74,6 @@
     <script src="./src/main.js"></script>
     <script src="./js/animations.js"></script>
     <script src="./js/scroll-animations.js"></script>
+    <!-- Add before closing body tag -->
 </body>
 </html>

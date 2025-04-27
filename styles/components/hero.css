@@ -7,6 +7,15 @@
     position: relative;
     overflow: hidden;
     padding: 0 2rem;
+    margin-bottom: 4rem;
+    border-bottom: 2px solid rgba(180, 167, 214, 0.1);
+}
+
+/* Remove or adjust any conflicting backgrounds */
+.main-container, 
+main, 
+[id$="-container"] {
+    background: transparent;
 }
 
 .hero-content {
@@ -14,6 +23,7 @@
     z-index: 1;
     max-width: 800px;
     margin-bottom: 2rem;
+    padding: 2rem;  /* Added padding */
 }
 
 .hero-content h1 {

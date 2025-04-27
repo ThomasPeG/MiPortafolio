@@ -248,3 +248,49 @@
 .benefit-card:nth-child(3) { transition-delay: 0.7s; }
 .service-card:nth-child(4),
 .benefit-card:nth-child(4) { transition-delay: 0.9s; }
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--bg-color);
+    border: none;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(180, 167, 214, 0.2);
+}
+
+.contact-message {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: center;
+    margin: 2rem 0;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
