@@ -11,14 +11,14 @@
     background: rgba(26, 27, 38, 0.98); /* Darker background */
     backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--primary-color);
-    padding: 1.25rem 4rem;
+    padding: 1rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 1.8rem; /* Larger logo */
+    font-size: 1.5rem; /* Larger logo */
     font-weight: bold;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
