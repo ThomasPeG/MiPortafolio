@@ -301,3 +301,40 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.services-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.services-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.services-image-container img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 350px;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+    .services-main-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .services-image-container {
+        order: -1;
+    }
+}

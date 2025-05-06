@@ -10,7 +10,7 @@
 .navbar {
     background: rgba(26, 27, 38, 0.98); /* Darker background */
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
     padding: 1rem 1rem;
     display: flex;
     justify-content: space-between;
