@@ -78,25 +78,5 @@ function getCurrentContainer() {
     return currentContainer;
 }
 
-scrollUpBtn.addEventListener('click', () => {
-    const currentContainer = getCurrentContainer();
-    const prevContainer = currentContainer.previousElementSibling;
-    
-    if (prevContainer) {
-        prevContainer.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-});
 
-scrollDownBtn.addEventListener('click', () => {
-    const currentContainer = getCurrentContainer();
-    const nextContainer = currentContainer.nextElementSibling;
-    
-    if (nextContainer) {
-        nextContainer.scrollIntoView({ behavior: 'smooth' });
-    }
-});
+
