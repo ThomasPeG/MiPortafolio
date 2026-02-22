@@ -1,0 +1,188 @@
+/* Variables reutilizables */
+:root {
+    --tech-card-bg: rgba(255, 255, 255, 0.05);
+    --tech-dialog-bg: rgba(34, 35, 47, 0.95);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Contenedor principal */
+.tech-stack {
+    padding: clamp(2rem, 5vw, 4rem);
+    text-align: center;
+    background: rgba(34, 35, 47, 0.774);
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    will-change: transform;
+    min-height: auto; /* Elimina cualquier altura mínima */
+    height: auto; /* Permite que la altura se ajuste al contenido */
+}
+
+/* Título y descripción */
+.tech-stack h3 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tech-stack p {
+    color: var(--text-color);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Grid de iconos - Ajustado para mejor distribución vertical */
+.tech-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(120px, 100%), 1fr));
+    gap: 1rem; /* Reducido el espacio entre elementos */
+    padding: 0.5rem; /* Reducido el padding */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Tarjeta de tecnología - Ajustada para ser más compacta */
+.tech-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* Reducido el padding */
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+    cursor: pointer;
+    background: var(--tech-card-bg);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backface-visibility: hidden;
+}
+
+.tech-icon:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.tech-icon i {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tech-icon span {
+    color: var(--text-color);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 500;
+}
+
+/* Diálogo informativo */
+.tech-dialog {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--tech-dialog-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: min(300px, 90vw);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-smooth);
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary-color);
+    text-align: left;
+    pointer-events: none;
+}
+
+.tech-icon:hover .tech-dialog {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.tech-dialog h4 {
+    color: var(--primary-color);
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tech-dialog p {
+    font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+    line-height: 1.4;
+}
+
+/* Lista de características */
+.tech-dialog ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-dialog ul li {
+    color: var(--text-color);
+    font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.tech-dialog ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Media queries optimizados */
+@media (hover: hover) {
+    .tech-icon:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-stack {
+        padding: 1.5rem 1rem; /* Reducido el padding en móviles */
+        margin: 1rem;
+    }
+
+    .tech-icons {
+        grid-template-columns: repeat(3, 1fr); /* Cambiado a 3 columnas */
+        gap: 0.8rem; /* Espacio más compacto */
+    }
+
+    .tech-icon {
+        padding: 0.8rem; /* Padding más compacto */
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-icons {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles pequeños */
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-dialog {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .tech-icon:hover .tech-dialog {
+        transform: translate(-50%, -50%);
+    }
+}

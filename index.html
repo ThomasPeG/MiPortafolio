@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./styles/components/navbar.css">
     <link rel="stylesheet" href="./styles/components/hero.css">
     <link rel="stylesheet" href="./styles/components/services.css">
+    <link rel="stylesheet" href="./styles/components/tech-stack.css">
     <link rel="stylesheet" href="./styles/components/contact.css">
     <link rel="stylesheet" href="./styles/components/why-web.css">
     <link rel="stylesheet" href="./styles/components/footer.css">
@@ -32,6 +33,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./styles/components/how-we-work.css">
+
+    <!-- Theme Styles -->
+    <link id="realistic-theme-stylesheet" rel="stylesheet" href="./styles/realistic-theme.css" disabled>
 
     <!-- Add logo styles -->
     <div class="background-circles">
@@ -74,15 +78,21 @@
     </div>
 </head>
 <body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="theme-toggle-checkbox">
+            <input type="checkbox" id="theme-toggle-checkbox" />
+            <div class="slider"></div>
+        </label>
+    </div>
     <div class="main-container">
         <div id="navbar-container"></div>
         
         <main>
             <div id="hero-container"></div>
-            <div id="about-us-container"></div>
+            <div id="services-container"></div>
             <div id="how-we-work-container"></div>
             <div id="why-web-container"></div>
-            <div id="services-container"></div>
+            <div id="about-us-container"></div>
         </main>
         <div id="footer-container"></div>
 
@@ -125,12 +135,43 @@
                 { url: './components/how-we-work.html', id: 'how-we-work-container' },
                 { url: './components/why-web.html', id: 'why-web-container' },
                 { url: './components/services.html', id: 'services-container' },
+                { url: './components/tech-stack.html', id: 'tech-stack-container'},
                 { url: './components/footer.html', id: 'footer-container' }
             ];
 
             for (const component of components) {
                 await loadComponent(component.url, component.id);
             }
+
+            // --- THEME SWITCHER LOGIC ---
+            const themeToggleCheckbox = document.getElementById('theme-toggle-checkbox');
+            const realisticThemeStylesheet = document.getElementById('realistic-theme-stylesheet');
+            const body = document.body;
+            const backgroundCircles = document.querySelector('.background-circles');
+
+            const applyTheme = (theme) => {
+                if (theme === 'realistic') {
+                    body.classList.add('realistic-theme-active');
+                    realisticThemeStylesheet.disabled = false;
+                    if (backgroundCircles) backgroundCircles.style.display = 'none';
+                    themeToggleCheckbox.checked = true;
+                } else {
+                    body.classList.remove('realistic-theme-active');
+                    realisticThemeStylesheet.disabled = true;
+                    if (backgroundCircles) backgroundCircles.style.display = ''; // Revert to default
+                    themeToggleCheckbox.checked = false;
+                }
+            };
+
+            themeToggleCheckbox.addEventListener('change', (event) => {
+                const newTheme = event.target.checked ? 'realistic' : 'original';
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            // Apply saved theme on initial load
+            const savedTheme = localStorage.getItem('theme') || 'original';
+            applyTheme(savedTheme);
         });
     </script>
     <script src="./src/main.js"></script>

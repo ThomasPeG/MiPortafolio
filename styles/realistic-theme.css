@@ -1,0 +1,195 @@
+.name-white {
+    color: white !important;
+}
+/* --- General Theme Styles --- */
+.realistic-theme-active {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../imgs/tela2.jpg');
+    background-size: 23rem; 
+    background-repeat: repeat; 
+    background-position: center; /* Aumenta la sensación de fibra */ 
+    filter: contrast(1.15) brightness(0.95);
+
+    /* Hide original background circles when realistic theme is active */
+    .realistic-theme-active .background-circles {
+        display: none !important;
+    }
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+/* --- Text with Fabric Effect --- */
+.realistic-theme-active .realistic-text {
+    background-image: url('../imgs/hiloblanco.jpg') !important;
+    background-size: 31px !important;
+    background-repeat: repeat !important;
+    -webkit-background-clip: text !important;
+    /* background-clip: text; */
+    color: transparent !important;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.9)) /* Sombra nítida para definición */ drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5)) !important;
+    
+    font-family: 'FontAwesome' !important;
+    text-shadow: 0px 0px 6px rgb(0 0 0 / 0%), 0px 4px 6px rgb(0 0 0 / 31%), 0px 6px 12px rgb(0 0 0 / 37%), 0px -2px 4px rgb(255 255 255 / 38%) !important;
+    filter: blur(0.3px) !important;
+}
+
+/* --- Component-Specific Overrides --- */
+
+
+/* --- Realistic SVG & Image Styles --- */
+.realistic-theme-active .services-image-container img,
+.realistic-theme-active .about-image-container img,
+.realistic-theme-active .step-image img,
+.realistic-theme-active .why-web-image-container img
+ {
+    filter: 
+        /* Stitched border effect by stacking shadows */
+        drop-shadow(1.5px 1.5px 0px rgba(255, 255, 255, 0.3))
+        drop-shadow(-1.5px -1.5px 0px rgba(255, 255, 255, 0.3))
+        drop-shadow(1.5px -1.5px 0px rgba(255, 255, 255, 0.3))
+        drop-shadow(-1.5px 1.5px 0px rgba(255, 255, 255, 0.3))
+        /* Depth shadow */
+        drop-shadow(5px 7px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* --- Fluffy Button --- */
+.realistic-theme-active .realistic-button {
+    border: none;
+    border-radius: 25px;
+    background-image: url('../imgs/texturadetela.jpg'); /* Ruta corregida */
+    background-size: cover;
+    background-position: center;
+    color: #2c2c2c;
+    font-size: 1.2rem; /* Ajustado para consistencia */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.4));
+    box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.2), inset 0 4px 6px rgba(255, 255, 255, 0.7);
+    padding: 15px 25px;
+}
+
+.realistic-theme-active .realistic-button:hover {
+    transform: none;
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.5));
+}
+
+/* --- Component-specific adaptations --- */
+
+/* Navbar */
+.realistic-theme-active .navbar {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Hero Section */
+.realistic-theme-active .hero {
+    /* El contenedor principal de la sección no necesita el efecto de cristal si el contenido ya lo tiene */
+    background: none; 
+}
+
+.realistic-theme-active .hero-content {
+    /* Aplicamos el efecto de cristal al contenedor del contenido */
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(-1px) !important;
+    border: none;
+    border-radius: none;
+    padding: 40px;
+}
+
+/* About Us Section */
+.realistic-theme-active .about-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+/* Services Section */
+.realistic-theme-active .service-card, 
+.realistic-theme-active .benefit-card, 
+.realistic-theme-active .step-content,
+.realistic-theme-active .service-card,
+.realistic-theme-active .about-card
+ {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+/* How We Work Section */
+.realistic-theme-active .step-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+/* Why Web Section */
+.realistic-theme-active .why-web-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+/* Tech Stack Section */
+.realistic-theme-active .tech-card {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Contact Section */
+.realistic-theme-active .contact-form {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.realistic-theme-active .contact-form input,
+.realistic-theme-active .contact-form textarea {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+}
+.realistic-theme-active .contact-form input::placeholder,
+.realistic-theme-active .contact-form textarea::placeholder {
+    color: #ccc !important;
+}
+
+/* Footer */
+.realistic-theme-active .footer {
+    background-color: rgba(0, 0, 0, 0.582) !important;
+    backdrop-filter: blur(10px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.no-hover {
+    transform: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+
+.borde-interno { position: relative;
+     padding: 40px;
+     /* ajusta según tu diseño */ 
+     background: white;
+     /* o tu textura */ 
+    } 
+.borde-interno::before { 
+     content: "";
+     position: absolute;
+     inset: 12px;
+     /* 🔥 controla qué tan adentro va el borde */ 
+     border: 1px dashed rgb(102, 102, 102);
+     border-radius: inherit;
+     pointer-events: none;
+ }

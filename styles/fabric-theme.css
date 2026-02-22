@@ -1,0 +1,81 @@
+/* Contenido para fabric-theme.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('texturafondonegro.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+.portfolio-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-header .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-header h1, .profile-header p, .about-me p, h2, .skills li, .project-card h3, .project-card p, .project-tags span {
+    background-image: url('hiloblancofino.jpg');
+    background-size: 400px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important; /* Usar !important para asegurar la sobreescritura */
+    filter: 
+        drop-shadow(0px 1px 1px rgba(0,0,0,0.9))
+        drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
+}
+
+.profile-header h1 { font-size: 4em; }
+.profile-header p { font-size: 1.5em; }
+h2 { font-size: 2.8em; border-bottom: 2px solid rgba(255, 255, 255, 0.3); padding-bottom: 10px; margin-bottom: 20px; }
+.skills li { font-size: 1.4em; background-color: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 8px; }
+.about-me, .skills, .projects { margin-top: 40px; text-align: left; }
+.skills ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 15px; }
+
+.projects .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px; }
+.projects .project-card { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 25px; }
+.projects .project-card h3 { font-size: 2.2em; margin-top: 0; margin-bottom: 15px; }
+.projects .project-card p { font-size: 1.2em; line-height: 1.6; }
+.projects .project-tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+.projects .project-tags span { font-size: 1em; padding: 5px 10px; border-radius: 5px; background-color: rgba(0, 0, 0, 0.3); }
+
+.contact-buttons { margin-top: 40px; display: flex; justify-content: center; gap: 25px; }
+.fluffy-button {
+    position: relative;
+    border: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 25px;
+    background-image: url('texturadetela.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #2c2c2c;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.4));
+    box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.2), inset 0 4px 6px rgba(255, 255, 255, 0.7);
+}
+.fluffy-button:hover { transform: translateY(-3px); filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.5)); }
+.icon-stitched { text-shadow: 0 0 2px #000, 1px 1px 3px rgba(0,0,0,0.5); }

@@ -4,11 +4,13 @@
   "description": "Professional web development services",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server --port=3000",
+    "dev": "live-server --open=index.html --port=3000",
     "start": "live-server --port=3000"
   },
   "author": "Thomas PerezG",
   "license": "ISC",
   "devDependencies": {
+    "live-server": "^1.2.2",
     "typescript": "^5.8.3"
-  }}
+  }
+}
